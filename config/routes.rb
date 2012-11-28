@@ -1,10 +1,16 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+  match '/signup',to:'users#new'
 
+  root to: 'static_pages#home'
+  # root :to => 'static_pages#home', :as => 'static_pages'
   get "static_pages/home"
   get 'home' => "static_pages#home"
+  match '/', to: 'static_pages#home'
 
   get "static_pages/help"
-  get "help" => "static_pages#help"
+  # get "help" => "static_pages#help"
+  match '/help', to: 'static_pages#help'
 
   get "static_pages/about"
   get "about" => "static_pages#about"
@@ -73,6 +79,6 @@ SampleApp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
    
-   match ':controller(/:action(/:id))(.:format)'
+   # match ':controller(/:action(/:id))(.:format)'
 
 end
