@@ -2,11 +2,13 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 require 'spec_helper'
@@ -17,12 +19,16 @@ describe User do
   	@user = User.new(name:"Example User", email:"user@example.com",password:"foobar",password_confirmation:"foobar")
   end
   subject {@user}
+  it {should be_valid}
   it {should respond_to(:name)}
   it {should respond_to(:email)}
   it {should respond_to(:password_digest)}
   it {should respond_to(:password)}
   it {should respond_to(:password_confirmation)}
-  it{should be_valid}
+
+  # it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
+  
 
   describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
@@ -39,7 +45,7 @@ describe User do
     it { should_not be_valid }
   end
 
-  it { should respond_to(:authenticate) }
+  
 
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
@@ -60,5 +66,11 @@ describe User do
       it { should_not == user_for_invalid_password }
       specify { user_for_invalid_password.should be_false }
     end
+  end
+
+  describe "rememer token" do
+    before {@user.save}
+    # it { @user.remember_token.should_not be_blank }
+    its(:remember_token){should_not be_blank}
   end
 end

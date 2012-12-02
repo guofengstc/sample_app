@@ -1,0 +1,1730 @@
+Script started on 2012年12月01日 星期六 17时59分59秒
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ sudo reboot/about
+[sudo] password for tom: 
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ sudo reboot/about[K[K[K[K[K[K[K[K[K[K[K[Kscript/about
+bash: script/about: No such file or directory
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ git branch
+  master
+* sign-in-out
+  sign-up
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ bundle exec rake db:migrati[Ke
+==  CreateUsers: migrating ====================================================
+-- create_table(:users)
+   -> 0.0014s
+==  CreateUsers: migrated (0.0016s) ===========================================
+
+==  AddPasswordDigestToUsers: migrating =======================================
+-- add_column(:users, :password_digest, :string)
+   -> 0.0009s
+==  AddPasswordDigestToUsers: migrated (0.0011s) ==============================
+
+==  AddIndexToUsersEmail: migrating ===========================================
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0021s
+==  AddIndexToUsersEmail: migrated (0.0025s) ==================================
+
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ rails 
+Usage: rails COMMAND [ARGS]
+
+The most common rails commands are:
+ generate    Generate new code (short-cut alias: "g")
+ console     Start the Rails console (short-cut alias: "c")
+ server      Start the Rails server (short-cut alias: "s")
+ dbconsole   Start a console for the database specified in config/database.yml
+             (short-cut alias: "db")
+ new         Create a new Rails application. "rails new my_app" creates a
+             new application called MyApp in "./my_app"
+
+In addition to those, there are:
+ application  Generate the Rails application code
+ destroy      Undo code generated with "generate" (short-cut alias: "d")
+ benchmarker  See how fast a piece of code runs
+ profiler     Get profile information from a piece of code
+ plugin       Install a plugin
+ runner       Run a piece of code in the application environment (short-cut alias: "r")
+
+All commands can be run with -h (or --help) for more information.
+]0;tom@ubuntu: ~/workspace/rails_projects/sample_apptom@ubuntu:~/workspace/rails_projects/sample_app$ rails  s
+=> Booting WEBrick
+=> Rails 3.2.9 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-12-01 18:40:19] INFO  WEBrick 1.3.1
+[2012-12-01 18:40:19] INFO  ruby 1.9.3 (2012-10-12) [i686-linux]
+[2012-12-01 18:40:19] INFO  WEBrick::HTTPServer#start: pid=6003 port=3000
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-01 18:42:08 +0800
+Connecting to database specified by database.yml
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.2ms)
+Compiled custom.css  (2432ms)  (pid 6003)
+Compiled sessions.css  (1ms)  (pid 6003)
+Compiled static_pages.css  (2ms)  (pid 6003)
+Compiled users.css  (4ms)  (pid 6003)
+Compiled application.css  (2536ms)  (pid 6003)
+Compiled jquery.js  (3ms)  (pid 6003)
+Compiled jquery_ujs.js  (0ms)  (pid 6003)
+Compiled sessions.js  (198ms)  (pid 6003)
+Compiled static_pages.js  (154ms)  (pid 6003)
+Compiled users.js  (143ms)  (pid 6003)
+Compiled application.js  (639ms)  (pid 6003)
+  Rendered layouts/_shim.html.erb (2.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 3437ms (Views: 3435.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /application.css - 200 OK (67ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /users.css - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /static_pages.css - 200 OK (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /custom.css - 200 OK (15ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /sessions.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /sessions.js - 200 OK (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /static_pages.js - 200 OK (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /application.js - 200 OK (19ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-12-01 18:42:12 +0800
+Served asset /rails.png - 200 OK (14ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-12-01 18:42:14 +0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 154ms (Views: 44.9ms | ActiveRecord: 41.3ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar(255)) [0m
+  [1m[35m (2.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121129034431')
+  [1m[36m (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121128084520')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121129032552')
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 19:16:47 +0800
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 57ms
+
+ActionView::MissingTemplate (Missing template sessions/new, application/new with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/tom/workspace/rails_projects/sample_app/app/views"
+):
+  actionpack (3.2.9) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.9) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.9) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.9) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:414:in `_run__364510610__process_action__1015068488__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.9) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `_run__426971976__call__182645721__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 19:17:11 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /application.css - 304 Not Modified (51ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /jquery.js - 304 Not Modified (6ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 19:17:12 +0800
+Served asset /application.js - 304 Not Modified (5ms)
+[2012-12-01 19:17:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:07:28 +0800
+Processing by SessionsController#new as HTML
+ERROR: compiling _app_views_sessions_new_html_erb___139398993__617726638 RAISED /home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:11: syntax error, unexpected keyword_end
+...	');@output_buffer.append= (end);@output_buffer.safe_concat('
+...	                              ^
+/home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+/home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_sessions_new_html_erb___139398993__617726638(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "sessions/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; provide(:title, "Sign in") 
+@output_buffer.safe_concat('<h1>Sign in</h1>
+<div class="row">
+	<div class="span6_offset3">
+		');@output_buffer.append=  form_for(:session , url:sessions_path) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (f.label :email);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (f.text_field :email);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (f.label :password);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (f.text_field :password);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (f.submit "Sign in", class: "btn btn-large btn-primary");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= (end);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		<p>New user?<%=link_to "Sign up now!",signup_path</p>
+	</div>
+</div>
+
+
+
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:297:in `module_eval'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:297:in `compile'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:232:in `compile!'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:144:in `block in render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications.rb:125:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/template.rb:143:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications.rb:123:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/rendering.rb:88:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activerecord-3.2.9/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/base.rb:167:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:414:in `_run__364510610__process_action__1015068488__callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/notifications.rb:123:in `instrument'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activerecord-3.2.9/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/base.rb:121:in `process'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/abstract_controller/rendering.rb:45:in `process'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal.rb:203:in `dispatch'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_controller/metal.rb:246:in `block in action'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:601:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activerecord-3.2.9/lib/active_record/query_cache.rb:64:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activerecord-3.2.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `_run__426971976__call__182645721__callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/rack/logger.rb:32:in `call_app'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/rack/logger.rb:16:in `block in call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/rack/logger.rb:16:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/activesupport-3.2.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/static.rb:62:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/engine.rb:479:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/application.rb:223:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/railties-3.2.9/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/tom/.rvm/gems/ruby-1.9.3-p286/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (/home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:11: syntax error, unexpected keyword_end
+...	');@output_buffer.append= (end);@output_buffer.safe_concat('
+...	                              ^
+/home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+/home/tom/workspace/rails_projects/sample_app/app/views/sessions/new.html.erb:21: syntax error, unexpected keyword_end, expecting ')'):
+    8: 			<%=f.label :password%>
+    9: 			<%=f.text_field :password%>
+    10: 			<%=f.submit "Sign in", class: "btn btn-large btn-primary"%>
+    11: 		<%=end%>
+    12: 		<p>New user?<%=link_to "Sign up now!",signup_path</p>
+    13: 	</div>
+    14: </div>
+  actionpack (3.2.9) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.9) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.9) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.9) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.9) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.9) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.9) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.9) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.9) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.9) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:414:in `_run__364510610__process_action__1015068488__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.9) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `_run__426971976__call__182645721__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /application.css - 304 Not Modified (25ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:51 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+[2012-12-01 21:08:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:08:55 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:55 +0800
+Served asset /application.css - 304 Not Modified (24ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /custom.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:56 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:08:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /application.css - 304 Not Modified (6ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /custom.css - 304 Not Modified (58ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:08:57 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:08:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (4.0ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /application.css - 304 Not Modified (21ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:09:01 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:09:01] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 21:23:31 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate (Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/tom/workspace/rails_projects/sample_app/app/views"
+):
+  actionpack (3.2.9) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.9) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.9) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.9) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.9) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.9) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.9) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.9) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.9) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:414:in `_run__364510610__process_action__311040033__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.9) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `_run__426971976__call__182645721__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/tom/.rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/tom/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-12-01 21:24:20 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  Rendered shared/_error_messages.html.erb (5.6ms)
+  Rendered users/new.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 131ms (Views: 27.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /application.css - 304 Not Modified (8ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:24:21 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:24:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /application.css - 304 Not Modified (14ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /custom.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:11 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:27:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 21:27:25 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"gf", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /application.css - 304 Not Modified (13ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /custom.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /users.js - 304 Not Modified (3ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:27:26 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+[2012-12-01 21:27:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /application.css - 304 Not Modified (16ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /custom.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:34 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /application.css - 304 Not Modified (10ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /custom.css - 304 Not Modified (21ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:38 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 21:28:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"gf", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /application.css - 304 Not Modified (6ms)
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:28:46 +0800
+Served asset /custom.css - 304 Not Modified (9ms)
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:28:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:47 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:47 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:47 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:47 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 21:28:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:28:47 +0800
+Served asset /application.js - 304 Not Modified (8ms)
+[2012-12-01 21:28:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 55.3ms | ActiveRecord: 0.5ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /application.css - 304 Not Modified (3ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /custom.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 21:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:54 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 21:42:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:55 +0800
+Served asset /users.js - 304 Not Modified (3ms)
+[2012-12-01 21:42:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 21:42:55 +0800
+Served asset /application.js - 304 Not Modified (7ms)
+[2012-12-01 21:42:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 26.9ms | ActiveRecord: 0.9ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /application.css - 304 Not Modified (9ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /jquery.js - 304 Not Modified (8ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:38 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /application.css - 304 Not Modified (11ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /custom.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:43 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+[2012-12-01 23:15:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Served asset /application.css - 304 Not Modified (8ms)
+[2012-12-01 23:15:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Served asset /users.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 23:15:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:15:44 +0800
+Served asset /custom.css - 304 Not Modified (3ms)
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 23:15:45 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 23:15:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (7.2ms)
+Completed 200 OK in 62ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /application.css - 304 Not Modified (15ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /custom.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /users.css - 304 Not Modified (2ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /sessions.js - 304 Not Modified (4ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:30 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+[2012-12-01 23:16:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mkFjnbPDT8JavYgKdnYPXcAgibFxTW4Ia+DyL2O4ts=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 146ms (Views: 145.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /application.css - 304 Not Modified (8ms)
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /sessions.css - 304 Not Modified (0ms)
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /custom.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /static_pages.css - 304 Not Modified (0ms)
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:34 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:16:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:35 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:35 +0800
+Served asset /sessions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:35 +0800
+Served asset /static_pages.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2012-12-01 23:16:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:35 +0800
+Served asset /users.js - 304 Not Modified (0ms)
+[2012-12-01 23:16:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-01 23:16:35 +0800
+Served asset /application.js - 304 Not Modified (6ms)
+[2012-12-01 23:16:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-01 23:18:16 +0800
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-01 23:18:16 +0800
+Served asset /application.css - 304 Not Modified (72ms)
+[2012-12-01 23:18:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-12-01 23:18:16 +0800
+Served asset /custom.css - 304 Not Modified (5ms)
+
+
