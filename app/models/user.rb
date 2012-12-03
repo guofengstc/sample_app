@@ -31,4 +31,7 @@ class User < ActiveRecord::Base
     self.remember_token=SecureRandom.urlsafe_base64
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 end
