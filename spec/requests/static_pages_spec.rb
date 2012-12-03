@@ -41,7 +41,8 @@ describe "Static pages" do
         let(:other_user) { FactoryGirl.create(:user) }
         before do
           other_user.follow!(user)
-          visit root_path
+          # visit root_path
+          visit user_path(user)
         end
 
         it { should have_link("0 following", href: following_user_path(user)) }
