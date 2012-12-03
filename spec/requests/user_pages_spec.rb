@@ -37,6 +37,7 @@ describe "UserPages" do
 	      sign_in admin
 	      visit users_path
 	    end
+
 	    
 	    # Need trouble-shooting
 	    # it { should have_link('delete', href: user_path(User.first)) }
