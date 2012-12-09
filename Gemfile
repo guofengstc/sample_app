@@ -6,6 +6,8 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'mongoid'
+gem "will_paginate_mongoid"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -14,6 +16,9 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'spork', '0.9.2'
   gem 'annotate', '2.5.0'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer' # 如果不查看方法栈，可以省略
 end
 
 # Gems used only for assets and not required

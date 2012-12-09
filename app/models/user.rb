@@ -11,7 +11,10 @@
 #  remember_token  :string(255)
 #
 
-class User < ActiveRecord::Base
+class User
+# class User < ActiveRecord::Base  
+=begin
+
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :microposts, dependent: :destroy
@@ -33,6 +36,25 @@ class User < ActiveRecord::Base
   					uniqueness:{case_sensitive: false}
   validates :password, presence: true, length:{minimum:6}
   validates :password_confirmation, presence: true
+=end
+# User.create(id:1,name:'gf',email:'gf@tom.com',created_at:Time.now,updated_at:Time.now,password_digest:'1',remember_token:'KkO8snptYPmd-7XZaOkwcA',admin:true)
+  # attr_accessible :id, :name, :email, :password_confirmation, :remember_token, :created_at, :updated_at,:admin
+  include Mongoid::Document
+  include WillPaginateMongoid::MongoidPaginator
+  has_many :microposts, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+
+  has_many :followers, through: :reverse_relationships, source: :follower
+  field :id,                :type => Integer
+  field :name,              :type => String
+  field :email,             :type => String
+  field :created_at,        :type => Time
+  field :updated_at,        :type => Time
+  field :password_digest,   :type => String
+  field :remember_token,    :type => String
+  field :admin,             :type => Boolean
+  validates_confirmation_of :password
+  validates :password, confirmation: true
 
   
   def create_remember_token
