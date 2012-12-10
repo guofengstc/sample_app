@@ -42,9 +42,9 @@ class User
   
   include Mongoid::Document
   # include ActiveModel::SecurePassword::ClassMethods
-  include ActiveModel::SecurePassword
+  #include ActiveModel::SecurePassword
   # include WillPaginateMongoid::MongoidPaginator
-  has_secure_password
+  #has_secure_password
   has_many :microposts, dependent: :destroy
   # has_many :relationships, dependent: :destroy
   # has_many :followed_users
@@ -59,16 +59,9 @@ class User
   field :password_digest,   :type => String
   field :remember_token,    :type => String
   field :admin,             :type => Boolean
-  before_save { self.email.downcase! }
-  before_save :create_remember_token
-  validates_confirmation_of :password
-  validates :password, confirmation: true
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true,
-  					format:   {with: VALID_EMAIL_REGEX},
-  					uniqueness:{case_sensitive: false}
-  validates :password, presence: true, length:{minimum:6}
-  validates :password_confirmation, presence: true
+  #validates_confirmation_of :password
+  #validates :password, confirmation: true
+
 
   
   def create_remember_token

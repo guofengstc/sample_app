@@ -1,6 +1,10 @@
 module SessionsHelper
 	def sign_in(user)
+		binding.pry
 	  cookies.permanent[:remember_token] = user.remember_token
+	  puts "user.remember_token======************===begin"
+	  puts user.remember_token
+	  puts "user.remember_token======*************===end"
 	  # cookies[:remember_token] = { value:   user.remember_token, expires: 20.years.from_now.utc }
 	  self.current_user = user
 	end
@@ -10,6 +14,7 @@ module SessionsHelper
 	end
 
 	def current_user
+		puts "cookies[:remember_token]=====#{cookies[:remember_token]}"
 		# @current_user ||= User.find_by_remember_token(cookies[:remember_token])
 		@current_user ||= User.find_by(remember_token: cookies[:remember_token])
 		
@@ -27,9 +32,7 @@ module SessionsHelper
 		# binding.pry
 		self.current_user = nil
 		cookies.delete(:remember_token)
-		puts "cookies[:remember_token]=========begin"
-		puts cookies[:remember_token]
-		puts "cookies[:remember_token]=========end"
+
 	end
 
 	def redirect_back_or(default)

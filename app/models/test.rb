@@ -145,32 +145,51 @@ class Navigator
     # # Bus.new.show
     # Bus.hello
 
+    require 'active_support/concern'
+
     module BC
-      def self.included(base) 
-        puts "123"
-        def base.call  
-          puts "I'm strong!"  
-        end
-        base.extend(ClassMethods)
-      end
+      extend ActiveSupport::Concern
+
+      included{
+        puts "Included"
+      }
+  
+
       module ClassMethods
-           def hello
-             puts "Hello baby!"
-           end
+        def hello
+          puts "Hello"
+        end
       end
+
+      # def self.extended(base, &block) 
+      #   # yield
+      #   def base.call  
+      #     puts "I'm strong!"  
+      #   end
+      #   # base.include self
+      #   base.instance_eval {include BC}
+      # end
+      # # module ClassMethods
+      # #      def hello
+      # #        puts "Hello baby!"
+      # #      end
+      # # end
+      # def hello
+      #   puts "Hello baby!"
+      # end
    end
 
    class Bus
-		def self.included(base) 
-			puts "123"
-		  def base.call  
-		    puts "I'm strong!"  
-		  end
-		  base.extend(ClassMethods)
-		end
-    # include BC
+		# def self.included(base) 
+		# 	puts "123"
+		#   def base.call  
+		#     puts "I'm strong!"  
+		#   end
+		#   base.extend(ClassMethods)
+		# end
+    include BC
    end
    # puts Bus.included("a")
-   # Bus.new.hello
+   Bus.new
    Bus.hello
 

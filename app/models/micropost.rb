@@ -1,11 +1,13 @@
-class Micropost < ActiveRecord::Base
+class Micropost 
+  include Mongoid::Document
   # attr_accessible :content, :user_id
   attr_accessible :content
   belongs_to :user
   validates :content, presence: true, length:{maximum: 140}
   validates :user_id, presence: true
   
-  default_scope order: 'microposts.created_at DESC'
+  # default_scope order: 'microposts.created_at DESC'
+  # default_scope :created_at, order('created_at DESC')
 
   # def self.from_users_followed_by(user)
   #   followed_user_ids = user.followed_user_ids
