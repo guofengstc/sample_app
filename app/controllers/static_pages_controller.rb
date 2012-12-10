@@ -4,9 +4,9 @@ class StaticPagesController < ApplicationController
   	# @micropost = current_user.microposts.build if signed_in?
 
   	if signed_in?
-      puts "****************************************8"
   		@micropost = current_user.microposts.build
   		# @feed_items = current_user.feed.paginate(page:params[:page])
+      @feed_items = current_user.feed.page(params[:page])
   	end
   end
 

@@ -44,13 +44,18 @@ class User
   # include ActiveModel::SecurePassword::ClassMethods
   include ActiveModel::SecurePassword
   # include WillPaginateMongoid::MongoidPaginator
+  before_save { self.email.downcase! }
   has_secure_password
   has_many :microposts, dependent: :destroy
   # has_many :relationships, dependent: :destroy
   # has_many :followed_users
+  has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: 'User'
+  has_and_belongs_to_many :followers, inverse_of: :followed_users, class_name: 'User'
+  # has_and_belongs_to_many :links, :class_name => 'Link', :inverse_of => :inbound_links
+  # has_and_belongs_to_many :inbound_links, :class_name => 'Link', :inverse_of => :links
 
-  # has_many :reverse_relationships, dependent:   :destroy
-  # has_many :followers
+  has_many :reverse_relationships, dependent:   :destroy
+  has_many :followers
   field :id,                :type => Integer
   field :name,              :type => String
   field :email,             :type => String

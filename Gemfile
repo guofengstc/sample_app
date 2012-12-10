@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'mongoid'
 # gem "will_paginate_mongoid"
 gem 'kaminari'
+gem 'mongoid_auto_increment_id'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

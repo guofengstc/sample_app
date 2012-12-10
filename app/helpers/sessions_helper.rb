@@ -1,6 +1,6 @@
 module SessionsHelper
 	def sign_in(user)
-		binding.pry
+	  # binding.pry
 	  cookies.permanent[:remember_token] = user.remember_token
 	  puts "user.remember_token======************===begin"
 	  puts user.remember_token
@@ -14,6 +14,7 @@ module SessionsHelper
 	end
 
 	def current_user
+		# binding.pry
 		puts "cookies[:remember_token]=====#{cookies[:remember_token]}"
 		# @current_user ||= User.find_by_remember_token(cookies[:remember_token])
 		@current_user ||= User.find_by(remember_token: cookies[:remember_token])
