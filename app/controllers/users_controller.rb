@@ -9,14 +9,17 @@ class UsersController < ApplicationController
 		@users = User.page(params[:page])
 	end
 	def show
+		# binding.pry
 		@user=User.find(params[:id])
 		@microposts = nil
 		# @microposts = @user.microposts.paginate(page: params[:page])
+		puts "============================"
 	end
 	def new
 		@user=User.new
 	end
 	def create
+		# binding.pry
 		@user=User.new(params[:user])
 		if @user.save
 			sign_in @user
@@ -31,6 +34,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		# binding.pry
 	  @user = User.find(params[:id])
 	  if @user.update_attributes(params[:user])
 	    # Handle a successful update.
@@ -70,15 +74,49 @@ class UsersController < ApplicationController
 	  def following
 	    @title = "Following"
 	    @user = User.find(params[:id])
-	    @users = @user.followed_users.paginate(page: params[:page])
+	    # @users = @user.followed_users.paginate(page: params[:page])
+	    @users = @user.followed_users.page(params[:page])
 	    render 'show_follow'
 	  end
 
 	  def followers
 	    @title = "Followers"
 	    @user = User.find(params[:id])
-	    @users = @user.followers.paginate(page: params[:page])
+	    # @users = @user.followers.paginate(page: params[:page])
+	    @users = @user.followers.page(params[:page])
 	    render 'show_follow'
 	  end
 
+	  def follow_add
+	  	
+	  	@user = User.find(params[:user][:id])
+	    current_user.followed_users << @user
+	    # binding.pry
+	    puts "======#{current_user.followed_users}"
+	    current_user.save
+	    @user.followers<<current_user
+	    @user.save
+	    #relationships.create!(followed_id: other_user.id)
+	    puts "======#{current_user.followed_users}"
+	    puts "======================================================"
+	      redirect_to @user 
+
+	  end
+
+	  def follow_del
+	  	# binding.pry
+	  	@user = User.find(params[:user][:id])
+	    current_user.followed_users.delete(@user)
+	    
+	    puts "======#{current_user.followed_users}"
+	    current_user.save
+	    @user.followers.delete(current_user)
+	    @user.save
+	    #relationships.create!(followed_id: other_user.id)
+	    puts "======#{current_user.followed_users}"
+	    puts "======================================================"
+		
+		redirect_to @user 
+	
+	  end
 end

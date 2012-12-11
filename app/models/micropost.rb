@@ -7,7 +7,7 @@ class Micropost
   validates :user_id, presence: true
   field :content, :type => String
   field :user_id, :type => Integer
-  field :timestamps, :type => Timestamps
+  field :timestamps, :type => Time
   # default_scope order: 'microposts.created_at DESC'
   # default_scope :created_at, order('created_at DESC')
 

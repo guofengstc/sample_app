@@ -21,6 +21,7 @@ class User
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
 
+
   has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name:  "Relationship",
                                    dependent:   :destroy
@@ -49,13 +50,17 @@ class User
   has_many :microposts, dependent: :destroy
   # has_many :relationships, dependent: :destroy
   # has_many :followed_users
-  has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: 'User'
-  has_and_belongs_to_many :followers, inverse_of: :followed_users, class_name: 'User'
+  # has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: 'User'
+  # has_and_belongs_to_many :followers, inverse_of: :followed_users, class_name: 'User'
+  # has_many :followed_users, class_name: 'User'
+  #has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: "User"
+  #has_and_belongs_to_many :followers, inverse_of: :followed_users, class_name: "User"
+  #has_many :followers, class_name: 'User'
   # has_and_belongs_to_many :links, :class_name => 'Link', :inverse_of => :inbound_links
   # has_and_belongs_to_many :inbound_links, :class_name => 'Link', :inverse_of => :links
 
-  has_many :reverse_relationships, dependent:   :destroy
-  has_many :followers
+  # has_many :reverse_relationships, dependent:   :destroy
+  # has_many :followers
   field :id,                :type => Integer
   field :name,              :type => String
   field :email,             :type => String
@@ -75,7 +80,31 @@ class User
   validates :password, presence: true, length:{minimum:6}
   validates :password_confirmation, presence: true
 
+  #has_and_belongs_to_many implement start#############################
+  has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: 'User'
+  has_and_belongs_to_many :followers, inverse_of: :followed_users, class_name: 'User'
+  #has_and_belongs_to_many implement end###############################
+=begin
+
+  #has_many implement start************************************************
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+
+
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name:  "Relationship",
+                                   dependent:   :destroy
+
   
+  def followers
+    reverse_relationships.map{|r| User.find(r.follower_id)}
+  end
+
+  def followed_users
+    relationships.map{|r| User.find(r.followed_id)}
+  end
+  #has_many implement end**************************************************
+=end
+
   def create_remember_token
     self.remember_token=SecureRandom.urlsafe_base64
   end
@@ -86,18 +115,18 @@ class User
   end
 
   def following?(other_user)
-    relationships.find_by_followed_id(other_user.id)
+    followed_users.include?(other_user)
+    #relationships.find_by_followed_id(other_user.id)
   end
 
   def follow!(other_user)
-    relationships.create!(followed_id: other_user.id)
+    followed_users << other_user
+    #relationships.create!(followed_id: other_user.id)
   end
 
   def unfollow!(other_user)
-    relationships.find_by_followed_id(other_user.id).destroy
+    #relationships.find_by_followed_id(other_user.id).destroy
   end
 
-  # def relations
 
-  # end
 end

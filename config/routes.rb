@@ -7,6 +7,8 @@ SampleApp::Application.routes.draw do
   end
   get "users/new"
   match '/signup',to:'users#new'
+  match '/user/follow_add',to:'users#follow_add'
+  match '/user/follow_del',to:'users#follow_del'
 
   resources :sessions, only:[:new,:create,:destroy]
   resources :microposts, only:[:create, :destroy]
