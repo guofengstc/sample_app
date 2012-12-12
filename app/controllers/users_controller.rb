@@ -104,13 +104,15 @@ class UsersController < ApplicationController
 	  end
 
 	  def follow_del
-	  	# binding.pry
+	  	binding.pry
 	  	@user = User.find(params[:user][:id])
+	  	# @user = User.find_by(id:params[:user][:id])
 	    current_user.followed_users.delete(@user)
 	    
 	    puts "======#{current_user.followed_users}"
 	    current_user.save
-	    @user.followers.delete(current_user)
+	    
+	    # @user.followers.delete(User.find(current_user.id))
 	    @user.save
 	    #relationships.create!(followed_id: other_user.id)
 	    puts "======#{current_user.followed_users}"

@@ -77,8 +77,17 @@ class User
   validates :email, presence: true,
   					format:   {with: VALID_EMAIL_REGEX},
   					uniqueness:{case_sensitive: false}
-  validates :password, presence: true, length:{minimum:6}
-  validates :password_confirmation, presence: true
+
+  validates :password, presence: true, length:{minimum:6}, :if => :need_check_password
+    
+  validates :password_confirmation, presence: true, :if => :need_check_password
+
+  def need_check_password
+    puts "=================================================="
+    puts "password_digest => #{password_digest}"
+    puts "=================================================="
+    password_digest == nil
+  end
 
   #has_and_belongs_to_many implement start#############################
   has_and_belongs_to_many :followed_users, inverse_of: :followers, class_name: 'User'
